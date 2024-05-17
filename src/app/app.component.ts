@@ -6,5 +6,20 @@ import { Component } from '@angular/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'bases';
+  public title: string = 'Mi primera app';
+  public counter: number = 0;
+
+
+  sum(event?: MouseEvent){
+    this.counter += 1
+  }
+
+  reset(event?: MouseEvent){
+    this.counter = 0;
+  }
+
+  rest(event?: MouseEvent){
+    this.counter -= 1
+  }
+
 }
