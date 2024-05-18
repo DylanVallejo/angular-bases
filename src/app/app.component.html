@@ -1,6 +1,9 @@
 <h1>{{title}}</h1>
 <hr>
 <h3>Counter: {{counter}} </h3>
-<button type="button" (click)="sum($event)" >+</button>
-<button  type="button" (click)="reset($event)">Reset</button>
-<button  type="button" (click)="rest($event)">-</button>
+<button type="button" (click)="counterValue(1)" >+</button>
+<button  type="button" (click)="reset()">Reset</button>
+<button  type="button" (click)="counterValue(-1)">-</button>
+
+<hr>
+<app-counter></app-counter>

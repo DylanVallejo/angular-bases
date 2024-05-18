@@ -10,16 +10,32 @@ export class AppComponent {
   public counter: number = 0;
 
 
-  sum(event?: MouseEvent){
-    this.counter += 1
+  counterValue(value:number):void{
+    console.log(value)
+    // if(this.counter >= 0){
+      this.counter += value;
+    // }else if(this.counter === 0 ){
+      // alert("No puedes restar mas.")
+    // }else{
+      // this.counter -= value
+    // }
   }
 
-  reset(event?: MouseEvent){
+  // sum(value:number):void{
+  //   this.counter += value
+  // }
+
+  reset():void{
     this.counter = 0;
   }
 
-  rest(event?: MouseEvent){
-    this.counter -= 1
-  }
+  // rest(value:number):void{
+  //   if(this.counter === 0){
+  //     alert("No puedes restar mas.")
+
+  //   }else{
+  //     this.counter -= value
+  //   }
+  // }
 
 }
