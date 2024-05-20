@@ -31,7 +31,6 @@ export class CounterComponent  {
 
 
   counterValue(value:number):void{
-    console.log(value)
     // if(this.counter >= 0){
       this.counter += value;
     // }else if(this.counter === 0 ){
