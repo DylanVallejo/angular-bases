@@ -1,12 +1,22 @@
 <h3>Listado de Héroes</h3>
 
 
-<h3>Héroe borrado <small class="text-danger"> xxx </small> </h3>
-<h3>No se ha borrado ningun héroe</h3>
+<!-- podemos indicar que se muestre un ng-template  con condicionales, el ng-template no se muestra nunca por defecto
+unicamente al darle instrucciones-->
+<div *ngIf="deletedHero ; else nothingWasDeleted">
+  <h3>Héroe borrado <small class="text-danger"> {{ deletedHero }} </small> </h3>
+</div>
+<!-- #nothingWasDeleted esto indica que es una referencia local -->
+<ng-template #nothingWasDeleted>
+  <h3>No se ha borrado ningun héroe</h3>
+</ng-template>
 
-<button class="btn btn-outline-danger">
+
+<button class="btn btn-outline-danger" (click)="removeLastHero()" *ngIf="heroNames.length > 0" >
   Borrar último héroe
 </button>
+
+
 
 <ul class="mt-2 list-group">
   <li *ngFor="let hero of heroNames" class="list-group-item">
