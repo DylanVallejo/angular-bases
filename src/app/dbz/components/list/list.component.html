@@ -6,7 +6,16 @@
     let isEven = even;
     let isOdd = odd;
     "
-    class="list-group-item">
+
+    class="list-group-item"
+
+    [ngClass]="{
+      'list-group-item-success': isLast,
+      'list-group-item-primary': isEven,
+
+      }"
+    >
+    <!-- podemos indicar clases css de manera condicional con la ayuda de ngClass -->
     <span class="text-primary">
       {{ i + 1  }}.
     </span>
