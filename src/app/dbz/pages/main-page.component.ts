@@ -18,4 +18,10 @@ export class MainPageComponent  {
     }
   ];
 
+  onNewCharacterMain( character:Character): void {
+
+    console.log({mainpage:'main', character})
+    this.characters.push(character);
+  }
+
 }
