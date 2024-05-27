@@ -24,4 +24,8 @@ export class MainPageComponent  {
     this.characters.push(character);
   }
 
+  onDeleteCharacterMain(index:number):void{
+    this.characters.splice(index,1);
+  }
+
 }
