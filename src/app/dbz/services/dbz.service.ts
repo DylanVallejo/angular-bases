@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Character } from '../interfaces/character.interface';
-
+import { v4 as uuid } from 'uuid';
 
 // al definir root se aplicara el patron singleton que nos permite usarlo en toda la app
 @Injectable({
@@ -8,22 +8,31 @@ import { Character } from '../interfaces/character.interface';
 })
 export class DbzService {
 
+
+
   public characters: Character[]= [
     {
+      id: uuid(),
       name: 'Krillin',
       power: 1000
     },{
+      id: uuid(),
       name:'Goku',
       power: 10000
     }
   ];
 
   onNewCharacterMain( character:Character): void {
-    this.characters.push(character);
+
+    const newCharacter:Character = { id:uuid(),...character };
+
+    this.characters.push(newCharacter);
+
   }
 
-  onDeleteCharacterMain(index:number):void{
-    this.characters.splice(index,1);
+  onDeleteCharacterById(index:string):void{
+    console.log(this.characters.filter(character => character.id !== index))
+    this.characters = this.characters.filter(character => character.id !== index);
   }
 
 }

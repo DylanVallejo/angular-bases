@@ -11,7 +11,7 @@ export class ListComponent {
 
 
   @Output()
-  public onDeleteCharacter: EventEmitter<number> = new EventEmitter();
+  public onDeleteCharacter: EventEmitter<string> = new EventEmitter();
 
   @Input()
   public characterList : Character[] = [
@@ -22,7 +22,7 @@ export class ListComponent {
   ]
 
 
-  emitCharacterIndex(index:number):void{
+  emitCharacterIndex(index?:string):void{
     this.onDeleteCharacter.emit(index);
   }
 
