@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Character } from '../../interfaces/character.interface';
+import { DbzService } from '../../services/dbz.service';
 
 
 
@@ -28,6 +29,10 @@ export class CharacterComponent {
     this.onNewCharacter.emit({...this.character});
     this.character.name = '';
     this.character.power = 0;
+
+  }
+
+  constructor(dbzService: DbzService){
 
   }
 
