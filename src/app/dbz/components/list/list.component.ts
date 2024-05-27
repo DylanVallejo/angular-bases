@@ -22,8 +22,8 @@ export class ListComponent {
   ]
 
 
-  emitCharacterIndex(index?:string):void{
-    this.onDeleteCharacter.emit(index);
+  emitCharacterIndex(id?:string):void{
+    this.onDeleteCharacter.emit(id);
   }
 
 }

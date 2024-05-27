@@ -22,7 +22,7 @@ export class DbzService {
     }
   ];
 
-  onNewCharacterMain( character:Character): void {
+  adCharacter( character:Character): void {
 
     const newCharacter:Character = { id:uuid(),...character };
 

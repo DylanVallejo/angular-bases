@@ -11,11 +11,24 @@ export class MainPageComponent  {
 
   public list: Character[]=[];
 
-  constructor(public dbzService: DbzService ){
-
+  constructor(private dbzService: DbzService ){
     // this.list = dbzService.characters;
     // dbzService.onDeleteCharacterMain;
     // dbzService.onNewCharacterMain;
   }
+
+  get characters(): Character[]{
+    return [...this.dbzService.characters];
+  }
+
+  onDeleteCharacter(id:string):void{
+    this.dbzService.onDeleteCharacterById(id);
+  }
+
+  onNewCharacter(character:Character):void{
+    this.dbzService.adCharacter(character);
+  }
+
+
 
 }
